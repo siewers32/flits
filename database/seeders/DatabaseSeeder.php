@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LicenseSeeder::class,
             CameraSeeder::class,
-            FlashSeeder::class
+            FlashSeeder::class,
+            FineSeeder::class,
         ]);
     }
 }

@@ -21,6 +21,8 @@ class CameraSeeder extends Seeder
                 'address' => $faker->streetAddress(),
                 'city' => $faker->city(),
                 'max_speed' => $faker->randomElement([50,80,100]),
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now(),
             ]);
         }
     }

@@ -23,13 +23,11 @@ class FlashSeeder extends Seeder
             $camera = $cameras[array_rand($cameras)];
             DB::table('flashes')->insert([
                 'camera_id' => $camera->id,
-                //'camera_id' => 1,
                 'license' => $licenses[array_rand($licenses)]->license,
-                //'license' => '00-00-ZZ',
                 'speed' => $camera->max_speed + 0.1 * ($camera->max_speed) + (random_int(0,99)/100) * $camera->max_speed,
-                //'speed' => 50,
                 'expdate' => $today->subDays(random_int(60,120)),
-                //'expdate' => \Carbon\Carbon::now(),
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now(),
             ]);
         }
     }
