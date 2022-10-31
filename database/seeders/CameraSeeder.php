@@ -16,7 +16,7 @@ class CameraSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create('nl_NL');
-        for($i=0; $i<30; $i++) {
+        for($i=0; $i<20; $i++) {
             DB::table('cameras')->insert([
                 'address' => $faker->streetAddress(),
                 'city' => $faker->city(),

@@ -21,7 +21,7 @@ class FineSeeder extends Seeder
             '100' => 11,
         ];
         foreach($fines as $speed => $perc) {
-            for($i = 0; $i <= 40; $i = $i + 5) {
+            for($i = 0; $i <= 200; $i = $i + 5) {
                 for($x = 1; $x <= 5; $x ++) {
                     $fine =  ($i + 1) * $perc;
                     if($i <= 1) {

@@ -19,7 +19,7 @@ class FlashSeeder extends Seeder
         $licenses = DB::table('licenses')->select('license')->get()->toArray();
         $faker = \Faker\Factory::create('nl_NL');
         $today = \Carbon\Carbon::now();
-        for($i=0; $i<30; $i++) {
+        for($i=0; $i<300; $i++) {
             $camera = $cameras[array_rand($cameras)];
             DB::table('flashes')->insert([
                 'camera_id' => $camera->id,
