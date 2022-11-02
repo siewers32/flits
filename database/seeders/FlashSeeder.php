@@ -20,12 +20,13 @@ class FlashSeeder extends Seeder
         $faker = \Faker\Factory::create('nl_NL');
         $today = \Carbon\Carbon::now();
         for($i=0; $i<300; $i++) {
+            $expdate = \Carbon\Carbon::now();
             $camera = $cameras[array_rand($cameras)];
             DB::table('flashes')->insert([
                 'camera_id' => $camera->id,
                 'license' => $licenses[array_rand($licenses)]->license,
-                'speed' => $camera->max_speed + 0.1 * ($camera->max_speed) + (random_int(0,99)/100) * $camera->max_speed,
-                'expdate' => $today->subDays(random_int(60,120)),
+                'speed' => $camera->max_speed + 0.1 * ($camera->max_speed) + (random_int(0,10)/100) * $camera->max_speed,
+                'expdate' => $expdate->subDays(random_int(10,365)),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ]);
